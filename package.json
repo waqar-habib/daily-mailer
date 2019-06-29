@@ -1,0 +1,29 @@
+{
+  "name": "daily-mailer",
+  "version": "1.0.0",
+  "description": "The Daily Mailer lets the users view and leave comments on the latest news from Daily Mail news. In addition to showing the most recent finds, users can also leave a note on the article for later.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waqar-habib/daily-mailer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/waqar-habib/daily-mailer/issues"
+  },
+  "homepage": "https://github.com/waqar-habib/daily-mailer#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "cherio": "^1.0.0-rc.2",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "jsonframe-cheerio": "^3.0.1",
+    "mongojs": "^2.6.0",
+    "mongoose": "^5.6.2"
+  }
+}

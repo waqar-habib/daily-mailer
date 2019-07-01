@@ -3,6 +3,7 @@
 // Dependencies
 var express = require("express");
 var mongoose = require("mongoose");
+var path = require('path');
 
 // Require axios and cheerio. This makes the scraping possible
 var axios = require("axios");
@@ -27,11 +28,11 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 // Make public a static folder
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, '/public')));
 
-// Main route (simple Hello World Message)
+//Main route (simple Hello World Message)
 app.get("/", function (req, res) {
-  res.send("Hello world");
+  res.sendFile(__dirname + '/index.html');
 });
 
 app.get("/scrape", function (req, res) {
@@ -74,6 +75,25 @@ app.get("/articles", function(req, res) {
       res.json(err);
     });
 });
+
+// Route for grabbing a specific Article by id, populate it with it's note
+app.get("/articles/:id", function(req, res) {
+  // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
+  db.Article.findOne({ _id: req.params.id })
+    //console.log({ _id: req.params.id });
+    // ..and populate all of the notes associated with it
+    //.populate("note")
+    .then(function(dbArticle) {
+      // If we were able to successfully find an Article with the given id, send it back to the client
+      res.json(dbArticle);
+    })
+    .catch(function(err) {
+      // If an error occurred, send it to the client
+      res.json(err);
+    });
+});
+
+
 
 
 // Listen on port 5000

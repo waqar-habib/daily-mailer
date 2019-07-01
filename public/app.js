@@ -2,7 +2,6 @@
 $.getJSON("/articles", function (data) {
   // For each one
   console.log(data);
-  var articles = [];
 
   for (var i = 0; i < data.length; i++) {
 
@@ -10,6 +9,10 @@ $.getJSON("/articles", function (data) {
     if (data[i].blurb) {
       articleBlurb = `<p class="post-subtitle" id="synopsis">${data[i].blurb}</p>`
     }
+    // var note = "";
+    // if (data[i].note) {
+    //   note = `<button type="button" class="btn btn-dark" id="addNote" data-id=${data[i].note}>View Note</button>`
+    // }
     var articleElement = `
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -40,9 +43,9 @@ $(document).on("click", "#addNote", function () {
     // With that done, add the note information to the page
     .then(function (data) {
       //console.log(data);
-      if (data.note) {
-        $("#noteBody").append(data.note);        
-      }
+      // if (data.note) {
+      //   $("#noteBody").append(data.note);        
+      // }
       // A button to submit a new note, with the id of the article saved to it
       $(".saveNote").data("id", thisId)
       $("#note").modal("show");

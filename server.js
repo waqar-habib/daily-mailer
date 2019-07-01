@@ -82,7 +82,7 @@ app.get("/articles/:id", function(req, res) {
   db.Article.findOne({ _id: req.params.id })
     //console.log({ _id: req.params.id });
     // ..and populate all of the notes associated with it
-    //.populate("note")
+    .populate("note")
     .then(function(dbArticle) {
       // If we were able to successfully find an Article with the given id, send it back to the client
       res.json(dbArticle);

@@ -2,7 +2,7 @@
 
 // Grab the articles as a json
 $.getJSON("/articles", function (data) {
-  
+
   // Clg the data object
   console.log(data);
 
@@ -37,6 +37,7 @@ $.getJSON("/articles", function (data) {
       </div>`;
     
     // Append the constructed html onto the article container
+    // $(".article-container").empty();
     $(".article-container").append(articleElement);
   }
 });
@@ -102,11 +103,11 @@ $(document).on("click", ".saveNote", function () {
       $("#note").modal("hide");
 
       // Reload the window
-      location.reload();
+      window.location.href='/';
     });
 });
 
-// Ln 100-: When "view note" btn is clicked, get the note from the database 
+// Ln 100-138: When "view note" btn is clicked, get the note from the database 
 
 $(document).on("click", "#viewNote", function () {
   
@@ -136,3 +137,16 @@ $(document).on("click", "#viewNote", function () {
       $("#noteModal").modal("show");
     });
 });
+
+//Ln 141-144: When the scrape button is clicked it routes to /scrape page. 
+$(document).on("click", ".scrape", function () {
+  window.location.href='/scrape';
+  return false;
+});
+
+//Ln 147-150: When the home button is clicked it routes to index.html
+$(document).on("click", ".home", function () {
+  window.location.href='/';
+  return false;
+});
+

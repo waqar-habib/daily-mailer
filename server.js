@@ -1,5 +1,3 @@
-// DB NAME: scraper
-
 // Dependencies
 var express = require("express");
 var mongoose = require("mongoose");
@@ -27,26 +25,31 @@ app.use(express.urlencoded({
   extended: true
 }));
 app.use(express.json());
+
 // Make public a static folder
 app.use(express.static(path.join(__dirname, '/public')));
 
-//Main route (simple Hello World Message)
+// Main route to index.html
 app.get("/", function (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
+// GET route that scrapes the articles using cheerio and axios
 app.get("/scrape", function (req, res) {
   axios.get("https://www.aljazeera.com/").then(function (response) {
     var $ = cheerio.load(response.data);
-
+    
+    // Targeted Div on the website that contains the articles needed
     $("div.mts-title-wrap").each(function (i, element) {
 
+      // Store data in an object
       var result = {};
 
       result.title = $(this).children("h1").text();
       result.url = $(this).children("h1").children("a").attr("href");
       result.blurb = $(this).siblings("p").text();
 
+      // Create a collection in Mongo using the schema in Article.js and documents using result
       db.Article.create(result)
         .then(function (dbArticle) {
           console.log(dbArticle);
@@ -57,13 +60,14 @@ app.get("/scrape", function (req, res) {
       console.log(result);
     });
 
-    // Send a message to the client
+    // Redirect client to scrape.html
     res.sendFile(__dirname + '/public/scrape.html');
   });
 });
 
 // Route for getting all Articles from the db
 app.get("/articles", function(req, res) {
+  
   // Grab every document in the Articles collection
   db.Article.find({})
     .then(function(dbArticle) {
@@ -114,10 +118,6 @@ app.post("/articles/:id", function(req, res) {
       res.json(err);
     });
 });
-
-
-
-
 
 // Listen on port 5000
 app.listen(PORT, function () {

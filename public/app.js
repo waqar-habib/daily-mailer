@@ -28,7 +28,7 @@ $.getJSON("/articles", function (data) {
           <div class="post-preview" id="articles">
             <h2 class="post-title" id="title" data-id=${data[i]._id}>${data[i].title}</h2>
             ${articleBlurb}
-            <a class="post-meta" id="url" target="_blank" href="https://www.aljazeera.com${data[i].url}">Read Full Article <br><br></a>
+            <a class="post-meta" id="url" target="_blank" href="https://www.aljazeera.com${data[i].url}">Click to Read Full Article <br><br></a>
             <button type="button" class="btn btn-dark" id="addNote" data-id=${data[i]._id}>Add Note</button>
             ${note}
           </div>

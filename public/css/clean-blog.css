@@ -176,22 +176,26 @@ img::-moz-selection {
 }
 
 header.masthead {
-  margin-bottom: 50px;
+  margin-bottom: 50px;  
   background: no-repeat center center;
   background-color: #868e96;
   background-attachment: scroll;
   position: relative;
   background-size: cover;
+  opacity: 0.75;
 }
 
 header.masthead .overlay {
+  background-image: url(../img/home-bg-small.jpeg);
+  background-repeat: no-repeat;
+  background-size: 100vw;
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   background-color: #212529;
-  opacity: 0.5;
+
 }
 
 header.masthead .page-heading,
@@ -199,6 +203,15 @@ header.masthead .post-heading,
 header.masthead .site-heading {
   padding: 200px 0 150px;
   color: white;
+}
+
+
+@media only screen and (min-width: 325px) {
+  header.masthead{
+    background-image: url(../img/home-bg-small.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -298,7 +311,7 @@ header.masthead .post-heading .meta a {
   font-size: 18px;
   font-style: italic;
   margin-top: 0;
-  color: #868e96;
+  color: #000000;
 }
 
 .post-preview > .post-meta > a {
@@ -417,4 +430,19 @@ footer .copyright {
 .btn-lg {
   font-size: 16px;
   padding: 25px 35px;
+}
+
+#addNote {
+  background-color: rgb(0, 11, 131);
+  border-color: rgb(0, 11, 131) !important;
+}
+
+.puppy {
+  border:8px solid #000000;
+}
+
+.scrape-heading {
+  background-color: #000000;
+  padding: 1rem;
+  color: #ffffff;
 }

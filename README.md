@@ -1,6 +1,6 @@
 # The Daily Mailer
 
-The Daily Mailer lets the users view and leave comments on the latest news from Daily Mail news. In addition to showing the most recent finds, users can also leave a note on the article for later. 
+The Daily Mailer lets the users view and leave comments on the latest news from Al Jazeera English. In addition to showing the most recent finds, users can also leave a note on the article for later. 
 
 ## Technology Stack
 
@@ -11,6 +11,10 @@ The Daily Mailer lets the users view and leave comments on the latest news from 
     1. Cherio
     2. Axios 
     3. Mongoose
+    
+## Theme
+
+Clean Blog from StartBootstrap (https://startbootstrap.com/themes/clean-blog/)
 
 ## Demo
 
@@ -19,7 +23,6 @@ Coming Soon
 ## Deployed Link
 
 Coming Soon
-
 
 ## Copyrights
 

@@ -22,7 +22,7 @@ Coming Soon
 
 ## Deployed Link
 
-Coming Soon
+https://dailymailer.herokuapp.com/
 
 ## Copyrights
 

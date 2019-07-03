@@ -5,12 +5,19 @@ The Daily Mailer lets the users view and leave comments on the latest news from 
 ## Technology Stack
 
 - MongoDB 
-- Express.JS, Node.JS and Handlebars.JS
+- Express.JS, Node.JS
 - JavaScript
 - NPM Packages: 
     1. Cherio
     2. Axios 
     3. Mongoose
+    
+## Instructions
+
+1. Click on the "fetch" button to scrape new articles. 
+2. Look at the cute dog gif fetching the paper and say, "awww" :)
+3. Once the articles load, click on "add note" button to add a note to that article. 
+4. To view an existing article, click on "view note". 
     
 ## Theme
 

@@ -14,7 +14,7 @@ var db = require("./models");
 var PORT = 5000;
 
 // MongoDB connection
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraper";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://waqarhabib94:kniw6n4/@ds147207.mlab.com:47207/heroku_f5zj6044";
 mongoose.connect(MONGODB_URI);
 
 // Initialize Express

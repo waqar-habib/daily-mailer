@@ -18,7 +18,7 @@ Clean Blog from StartBootstrap (https://startbootstrap.com/themes/clean-blog/)
 
 ## Demo
 
-![](demo.gif)
+![](public/img/demo.gif)
 
 ## Deployed Link
 
